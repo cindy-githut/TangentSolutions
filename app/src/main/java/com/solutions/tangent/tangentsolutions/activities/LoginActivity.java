@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
         }else if(TextUtils.isEmpty(password)){
 
-            txtPassword.setError(getString(R.string.error_invalid_username));
+            txtPassword.setError(getString(R.string.error_invalid_password));
             txtPassword.findFocus();
 
         }else{
