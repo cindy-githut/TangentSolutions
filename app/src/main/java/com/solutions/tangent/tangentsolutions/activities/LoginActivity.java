@@ -1,4 +1,4 @@
-package com.solutions.tangent.tangentsolutions;
+package com.solutions.tangent.tangentsolutions.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,7 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+import com.solutions.tangent.tangentsolutions.NetworkUrls;
+import com.solutions.tangent.tangentsolutions.R;
+import com.solutions.tangent.tangentsolutions.SharedPreferencesData;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
@@ -26,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = LoginActivity.class.getSimpleName();
     Button signIn;
     EditText txtUsername, txtPassword;
+    ProgressBar login_progress;
     OkHttpClient client;
     String username;
     String password;
@@ -38,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         txtUsername = (EditText) findViewById(R.id.username);
         txtPassword = (EditText) findViewById(R.id.password);
         signIn = (Button) findViewById(R.id.signIn);
-
+        login_progress = (ProgressBar) findViewById(R.id.login_progress);
         client = new OkHttpClient();
 
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +81,8 @@ public class LoginActivity extends AppCompatActivity {
     private void attemptLogin(){
 
         JSONObject loginRequestPayload = null;
+        login_progress.setVisibility(View.VISIBLE);
+        signIn.setVisibility(View.GONE);
 
         try {
 
@@ -91,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(JSON, loginRequestPayload.toString());
         Request request = new Request.Builder()
-                .url(NetworkUrls.authenticateUserLogin())
+                .url(NetworkUrls.AUTHENTICATE_USER_LOGIN)
                 .post(body)
                 .build();
 
@@ -105,7 +112,8 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
 
                         Toast.makeText(LoginActivity.this, getString(R.string.network_error), Toast.LENGTH_SHORT).show();
-
+                        login_progress.setVisibility(View.GONE);
+                        signIn.setVisibility(View.VISIBLE);
                     }
                 });
             }
@@ -121,6 +129,8 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
+                        login_progress.setVisibility(View.GONE);
+                        signIn.setVisibility(View.VISIBLE);
 
                         if (response.isSuccessful()) {
 

@@ -5,4 +5,13 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="medium_margin">10dp</dimen>
+    <dimen name="smaller_margin">5dp</dimen>
+    <dimen name="size_small">12sp</dimen>
+    <dimen name="size_medium">14sp</dimen>
+    <dimen name="progressbar_margin">40dp</dimen>
+    <dimen name="layout_margin">16dp</dimen>
+
+    <!-- Post Cards -->
+    <dimen name="post_card_corner_radius">3dp</dimen>
 </resources>

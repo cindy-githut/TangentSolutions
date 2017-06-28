@@ -18,5 +18,30 @@
     <string name="network_error">Looks like you have bad internet connection</string>
     <string name="invalid_credentials">You have entered invalid login credentials</string>
     <string name="title_activity_project_list">ProjectListActivity</string>
+    <string name="title_activity_add_project">AddProject</string>
+
+
+    <!-- Strings related to projects-->
+    <string name="project_create">Add</string>
+    <string name="prompt_title">Title </string>
+    <string name="prompt_description">Description </string>
+    <string name="prompt_billable">Is Billable </string>
+    <string name="prompt_active">Is Active </string>
+    <string name="error_invalid_title">Project title can not be empty</string>
+    <string name="error_invalid_description">Project description can not be empty</string>
+    <string name="error_invalid_startdate">Start Date can not be empty</string>
+    <string name="prompt_start_date">2017–07–29 </string>
+    <string name="prompt_end_date">2018–07–29 </string>
+    <string name="tangent_solutions">Tangent Solutions</string>
+    <string name="error">Something went wrong, please try again later</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="isactive">IsActive</string>
+    <string name="isbillable">IsBillable</string>
+
 
 </resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbarlayout"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_title"
+                android:inputType="text"
+                android:background="@drawable/post_card"
+                android:padding="10dp"
+                android:textSize="@dimen/size_medium"
+                android:layout_marginBottom="@dimen/fab_margin"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_description"
+                android:inputType="text"
+                android:background="@drawable/post_card"
+                android:padding="10dp"
+                android:textSize="@dimen/size_medium"
+                android:layout_marginBottom="@dimen/fab_margin"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                android:text="@string/start_date"/>
+
+            <EditText
+                android:id="@+id/startDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_start_date"
+                android:background="@drawable/post_card"
+                android:padding="10dp"
+                android:textSize="@dimen/size_medium"
+                android:layout_marginBottom="@dimen/fab_margin"
+                android:maxLines="1"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                android:text="@string/end_date"/>
+
+            <EditText
+                android:id="@+id/endDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_end_date"
+                android:background="@drawable/post_card"
+                android:padding="10dp"
+                android:textSize="@dimen/size_medium"
+                android:layout_marginBottom="@dimen/fab_margin"
+                android:maxLines="1" />
+
+            <CheckBox
+                android:id="@+id/active"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/isactive"
+                android:checked="true"/>
+
+            <CheckBox
+                android:id="@+id/billable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/isbillable"
+                android:checked="true"/>
+
+            <Button
+                android:id="@+id/bntAdd"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:background="@drawable/blue_button"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:visibility="visible"/>
+
+            <ProgressBar
+                android:id="@+id/project_progress"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
