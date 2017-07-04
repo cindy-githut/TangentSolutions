@@ -1,4 +1,4 @@
-# TangentSolutions
+# Interview Assessment
 Android Practical Assignment
 
 - The application needs the user to login to the system before they can be granted access to list and modify the projects list, 
